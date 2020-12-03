@@ -44,12 +44,12 @@ namespace ECommerce.Api.Orders.Providers
          }
       }
 
-      public async Task<(bool IsSuccess, Models.Order Order, string ErrorMessage)> GetOrderAsync(int id)
+      public async Task<(bool IsSuccess, Models.Order Order, string ErrorMessage)> GetOrderAsync(int customerId)
       {
          try
          {
-            logger?.LogInformation($"Querying Orders with id: {id}");
-            var Order = await dbContext.Orders.FirstOrDefaultAsync(p => p.Id == id);
+            logger?.LogInformation($"Querying Orders with id: {customerId}");
+            var Order = await dbContext.Orders.FirstOrDefaultAsync(p => p.Id == customerId);
             if (Order != null)
             {
                logger?.LogInformation("Order found");

@@ -2,9 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using ECommerce.Api.Customers.DB;
+using ECommerce.Api.Customers.Interfaces;
+using ECommerce.Api.Customers.Providers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +29,12 @@ namespace ECommerce.Api.Customers
       // This method gets called by the runtime. Use this method to add services to the container.
       public void ConfigureServices(IServiceCollection services)
       {
+         services.AddScoped<ICustomersProvider, CustomersProvider>();
+         services.AddAutoMapper(typeof(Startup));
+         services.AddDbContext<CustomersDBContext>(options =>
+         {
+            options.UseInMemoryDatabase("Customers");
+         });
          services.AddControllers();
       }
 

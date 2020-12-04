@@ -10,8 +10,10 @@ namespace ECommerce.Api.Search.Services
       private readonly IOrdersService ordersService;
       private readonly ICustomersService customersService;
 
-      public SearchService(IProductsService productsService,
-          IOrdersService ordersService, ICustomersService customersService)
+      public SearchService(
+           IProductsService productsService
+         , OrdersService ordersService
+         , ICustomersService customersService)
       {
          this.productsService = productsService;
          this.ordersService = ordersService;

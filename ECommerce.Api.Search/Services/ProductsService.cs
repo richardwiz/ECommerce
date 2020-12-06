@@ -14,11 +14,21 @@ namespace ECommerce.Api.Search.Services
       private readonly IHttpClientFactory httpClientFactory;
       private readonly ILogger<ProductsService> logger;
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="httpClientFactory"></param>
+      /// <param name="logger"></param>
       public ProductsService(IHttpClientFactory httpClientFactory, ILogger<ProductsService> logger)
       {
          this.httpClientFactory = httpClientFactory;
          this.logger = logger;
       }
+
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <returns></returns>
       public async Task<(bool IsSuccess, IEnumerable<Product> Products, string ErrorMessage)> GetProductsAsync()
       {
          try

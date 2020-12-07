@@ -27,17 +27,20 @@ namespace ECommerce.Api.Search
          services.AddScoped<IOrdersService, OrdersService>();
          services.AddScoped<ICustomersService, CustomersService>();
          services.AddScoped<ISearchService, SearchService>();
-         // Products Client
-         services.AddHttpClient("ProductsService", config =>
-         {
-            config.BaseAddress = new Uri(Configuration["Services:Products"]);
-         }).AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromMilliseconds(500)));
 
          // Orders Client
          services.AddHttpClient("OrdersService", config =>
          {
             config.BaseAddress = new Uri(Configuration["Services:Orders"]);
          }).AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromMilliseconds(500)));
+
+         // Products Client
+         services.AddHttpClient("ProductsService", config =>
+         {
+            config.BaseAddress = new Uri(Configuration["Services:Products"]);
+         }).AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromMilliseconds(500)));
+
+
          // Customers Client
          services.AddHttpClient("CustomersService", config =>
          {

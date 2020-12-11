@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Api.Orders", "ECo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Api.Search", "ECommerce.Api.Search\ECommerce.Api.Search.csproj", "{14349F51-A4C4-4525-84EC-30BA58559DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Api.Products", "ECommerce.Api.Products\ECommerce.Api.Products.csproj", "{EBA9CAD5-A69E-4515-91B3-F70921D8EC84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Api.Products", "ECommerce.Api.Products\ECommerce.Api.Products.csproj", "{EBA9CAD5-A69E-4515-91B3-F70921D8EC84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{805F38C5-5368-46C5-9994-CBDC49066DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Api.Products.Tests", "ECommerce.Api.Products.Tests\ECommerce.Api.Products.Tests.csproj", "{99E20705-BC5D-43C1-8E26-860126C87635}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{EBA9CAD5-A69E-4515-91B3-F70921D8EC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBA9CAD5-A69E-4515-91B3-F70921D8EC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBA9CAD5-A69E-4515-91B3-F70921D8EC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E20705-BC5D-43C1-8E26-860126C87635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E20705-BC5D-43C1-8E26-860126C87635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E20705-BC5D-43C1-8E26-860126C87635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E20705-BC5D-43C1-8E26-860126C87635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

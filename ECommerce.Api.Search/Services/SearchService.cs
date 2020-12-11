@@ -12,7 +12,7 @@ namespace ECommerce.Api.Search.Services
 
       public SearchService(
            IProductsService productsService
-         , OrdersService ordersService
+         , IOrdersService ordersService
          , ICustomersService customersService)
       {
          this.productsService = productsService;
@@ -31,11 +31,12 @@ namespace ECommerce.Api.Search.Services
             {
                foreach (var item in orders.Items)
                {
-                  item.ProductName = productsResult.IsSuccess ?
-                      productsResult.Products.FirstOrDefault(p => p.Id == item.ProductId)?.Name :
-                      "Product information is not available";
+                  item.ProductName = productsResult.IsSuccess 
+                     ? productsResult.Products.FirstOrDefault(p => p.Id == item.ProductId)?.Name 
+                     : "Product information is not available";
                }
             }
+
             var result = new
             {
                Customer = customersResult.IsSuccess ?
